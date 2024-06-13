@@ -1,4 +1,3 @@
-/* styles.css */
 body {
     font-family: Arial, sans-serif;
     text-align: center;
@@ -13,7 +12,12 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-#data p {
+#data ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#data li {
     font-size: 1.2em;
     margin: 10px 0;
 }
