@@ -3,17 +3,14 @@ document.addEventListener('DOMContentLoaded', function() {
     fetch('data.txt')
         .then(response => response.text())
         .then(text => {
+            // 파일 내용을 HTML에 표시
+            const dataContentElement = document.getElementById('data-content');
+            dataContentElement.textContent = text;
+
+            // 데이터를 파싱
             const data = text.trim().split('\n').map(line => {
                 const [date, number] = line.split(',');
                 return { date, number: Number(number) };
-            });
-
-            // 모든 날짜와 숫자를 HTML에 표시합니다.
-            const dataListElement = document.getElementById('data-list');
-            data.forEach(entry => {
-                const listItem = document.createElement('li');
-                listItem.textContent = `날짜: ${entry.date}, 숫자: ${entry.number}`;
-                dataListElement.appendChild(listItem);
             });
 
             // 그래프를 생성합니다.
@@ -59,5 +56,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         })
-        .catch(error => console.error('Error fetching the data:', error));
+        .catch(error => {
+            console.error('Error fetching the data:', error);
+            const dataContentElement = document.getElementById('data-content');
+            dataContentElement.textContent = 'Error fetching the data.';
+        });
 });
