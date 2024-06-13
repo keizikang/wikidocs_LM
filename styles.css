@@ -12,22 +12,3 @@ body {
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-
-a {
-    display: block;
-    margin-bottom: 20px;
-    font-size: 1.2em;
-    color: #3498db;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-pre {
-    text-align: left;
-    background-color: #eee;
-    padding: 10px;
-    border-radius: 5px;
-}
